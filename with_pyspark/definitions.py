@@ -20,7 +20,9 @@ class LocalParquetIOManager(ConfigurableIOManager):
 @asset
 def people() -> DataFrame:
     schema = StructType([StructField("name", StringType()), StructField("age", IntegerType())])
-    rows = [Row(name="Thom", age=51), Row(name="Jonny", age=48), Row(name="Nigel", age=49)]
+    rows = [
+        Row(name="Thom", age=51), Row(name="Jonny", age=48), Row(name="Nigel", age=49), Row(name="Ed", age=51)
+    ]
     spark = SparkSession.builder.getOrCreate()  # type: ignore
     return spark.createDataFrame(rows, schema)
 

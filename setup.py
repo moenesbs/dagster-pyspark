@@ -7,6 +7,7 @@ setup(
         "dagster",
         "dagster-spark",
         "dagster-pyspark",
+        "dagster-cloud",
     ],
     extras_require={"dev": ["dagster-webserver", "pytest"]},
 )
